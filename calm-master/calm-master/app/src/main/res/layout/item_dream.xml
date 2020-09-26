@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="music"
+            type="com.hjk.music_3.data.local.model.Music"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="180dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="@+id/CardView"
+        app:layout_constraintTop_toBottomOf="@+id/CardView">
+
+        <ImageView
+            android:id="@+id/cardview2_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            bind:post="@{music.image}" />
+
+        <LinearLayout
+            android:id="@+id/cardview2layout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cardview2layout2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/cardview2layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="130dp"
+                android:background="#B4222223"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cardview2_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:text="@{music.title}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

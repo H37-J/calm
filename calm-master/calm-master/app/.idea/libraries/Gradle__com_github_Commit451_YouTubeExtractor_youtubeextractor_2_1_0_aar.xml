@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Commit451.YouTubeExtractor:youtubeextractor:2.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/701d5c856f5927e66e411d85d495b201/jetified-youtubeextractor-2.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/701d5c856f5927e66e411d85d495b201/jetified-youtubeextractor-2.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/701d5c856f5927e66e411d85d495b201/jetified-youtubeextractor-2.1.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.Commit451.YouTubeExtractor/youtubeextractor/2.1.0/f89300a58c224c7176544f9eb5f0922e91444a07/youtubeextractor-2.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.Commit451.YouTubeExtractor/youtubeextractor/2.1.0/26f67ca38038d89ebe834239247d490c5d926da/youtubeextractor-2.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

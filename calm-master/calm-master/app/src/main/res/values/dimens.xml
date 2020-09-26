@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Movies items-->
+    <dimen name="item_offset">3dp</dimen>
+    <integer name="span_count">3</integer>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="standard_margin">8dp</dimen>
+    <dimen name="wide_padding">16dp</dimen>
+    <dimen name="wide_margin">24dp</dimen>
+    <dimen name="dial_width">200dp</dimen>
+    <dimen name="dial_height">200dp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="settings_title_text_size">32sp</dimen>
+    <dimen name="settings_text_size">20sp</dimen>
+    <dimen name="hold_text_size">20sp</dimen>
+</resources>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.qiushui:blurredview:0.8.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7806c4991263ecfa641fd18572e71cd3/jetified-blurredview-0.8.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7806c4991263ecfa641fd18572e71cd3/jetified-blurredview-0.8.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7806c4991263ecfa641fd18572e71cd3/jetified-blurredview-0.8.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qiushui/blurredview/0.8.1/c03dc57c162e7a8b6ec297427c5cc45d0ad929fb/blurredview-0.8.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qiushui/blurredview/0.8.1/62458b642eb27df001cf2c23e039426a303cfa99/blurredview-0.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

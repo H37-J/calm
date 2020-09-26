@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+
+        <variable name="activity"
+            type="com.hjk.music_3.ui.activity.login.RegisterActivity"/>
+
+        <variable name="activity2"
+            type="com.hjk.music_3.ui.activity.login.RegisterActivity_php"/>
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/join"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/main_bg" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="485dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nowglobal_w512_blank" />
+
+
+    <LinearLayout
+        android:id="@+id/underbar_n"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="398dp"
+        android:background="#C3673AB7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_n"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_n"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_n"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_n"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="400dp"
+        android:background="#23373232"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/name_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:text="이름"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_n"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_n" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#00373232"
+        android:ems="10"
+        android:hint="이름을 입력하시오."
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearlayout_n"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_n"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_n"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_n" />
+
+    <LinearLayout
+        android:id="@+id/underbar_e"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="323dp"
+        android:background="#C3673AB7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_Email"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_Email"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_Email" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout_Email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="325dp"
+        android:background="#23373232"
+        android:fadingEdge="vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_n"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_n"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_n">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/email_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:text="이메일"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_Email"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_Email" />
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:hint="example@example.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/linearlayout_Email"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_Email"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_Email"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_Email" />
+
+    <LinearLayout
+        android:id="@+id/underbar_p"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="253dp"
+        android:background="#C3673AB7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_p"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_p"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_p"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_p"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="255dp"
+        android:background="#23373232"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_Email"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_Email"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout_Email">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/password_q"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="비밀번호"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_p"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_p" />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/linearlayout_p"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_p"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_p"
+        app:layout_constraintTop_toTopOf="@+id/linearlayout_p" />
+
+    <Button
+        android:id="@+id/join_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#C3673AB7"
+        android:text="NOW에 회원가입하기"
+        android:textColor="#FFFFFF"
+        android:onClick="@{()->activity.sign()}"
+        app:layout_constraintEnd_toEndOf="@+id/linearlayout_p"
+        app:layout_constraintStart_toStartOf="@+id/linearlayout_p"
+        app:layout_constraintTop_toBottomOf="@+id/underbar_p" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="148dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"></LinearLayout>
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="24dp"
+        android:text="이미 계정이 있으신가요?"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/join_button"
+        app:layout_constraintTop_toBottomOf="@+id/join_button" />
+
+    <Button
+        android:onClick="@{()->activity.intent_login()"
+        android:id="@+id/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="#00FFFFFF"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/login_text"
+        app:layout_constraintStart_toEndOf="@+id/login_text"
+        app:layout_constraintTop_toTopOf="@+id/login_text" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout_terms"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="27dp"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/terms_button"
+        app:layout_constraintStart_toStartOf="@+id/terms_button"
+        app:layout_constraintTop_toBottomOf="@+id/terms_button"></LinearLayout>
+
+    <TextView
+        android:id="@+id/terms_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="NOW를 사용하면 약관에 동의하는 것으로 간주 됩니다. "
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/main_bg"
+        app:layout_constraintEnd_toEndOf="@+id/join_button"
+        app:layout_constraintStart_toStartOf="@+id/join_button"
+        app:layout_constraintTop_toBottomOf="@+id/join_button" />
+
+    <Button
+        android:id="@+id/terms_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/terms_text"
+        app:layout_constraintEnd_toEndOf="@+id/terms_text"
+        app:layout_constraintStart_toStartOf="@+id/terms_text"
+        app:layout_constraintTop_toTopOf="@+id/terms_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
