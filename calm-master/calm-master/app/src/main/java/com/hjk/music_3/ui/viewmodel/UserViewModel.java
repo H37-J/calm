@@ -16,16 +16,19 @@ public class UserViewModel extends AndroidViewModel {
 
     private static MutableLiveData<User> current_user=new MutableLiveData<User>();
     private static MutableLiveData<User> user=null;
+    private static MutableLiveData<List<User>> user_list=null;
     private static LiveData<User> user_room;
     private static UserRepository userRepository_local;
     private static UserRepository userRepository=UserRepository.getInstance();
     private static int save_login=0; //자동로그인 기본 0
+    private static MutableLiveData<Integer> alarm=new MutableLiveData<>();
 
     public void init(){
         if(user!=null)
             return;
         userRepository=UserRepository.getInstance();
         user_room=userRepository.getUser();
+        user_list=userRepository.getUserList();
 
     }
 
@@ -35,15 +38,17 @@ public class UserViewModel extends AndroidViewModel {
         save_login=userRepository_local.load_save_login();
     }
 
-    public static User returnUser(String id, String pwd,String name,String save_day,String save_history,String save_time,String last_login) {
+    public static User returnUser(String id,String pwd,String name,String save_back,String save_day,String save_history,String save_time,String last_login,String like_music) {
         User user = new User();
         user.setId(id);
         user.setPwd(pwd);
         user.setName(name);
+        user.setSave_back(save_back);
         user.setSave_day(save_day);
         user.setSave_history(save_history);
         user.setSave_time(save_time);
         user.setLast_login(last_login);
+        user.setLike_music(like_music);
         return user;
     }
 
@@ -63,13 +68,41 @@ public class UserViewModel extends AndroidViewModel {
     }
     //로그인한 유저
 
+    public static MutableLiveData<List<User>> getUserList(){
+        return user_list;
+    }
+
+
     public MutableLiveData<User> getLogin(String id){
         user=userRepository.getLogin(id);
         return user;
     }
+
+    public static int user_update(User u){
+        User user=new User();
+        user=u;
+        int result=userRepository.user_update(user);
+        return result;
+    }
+
+    public static int pass_change(User u){
+        User user=new User();
+        user=u;
+        int result=userRepository.pass_change(user);
+        return result;
+    }
+
     //레트로핏 로그인
     public static MutableLiveData<User> getUser(){
         return user;
     }
     //로그인한 유저 데이터 리턴
+
+    public static MutableLiveData<Integer> getAlarm(){
+        return alarm;
+    }
+
+    public void setAlarm(int a){
+        alarm.setValue(a);
+    }
 }

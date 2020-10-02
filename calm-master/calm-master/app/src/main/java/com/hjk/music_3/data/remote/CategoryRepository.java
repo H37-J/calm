@@ -44,6 +44,25 @@ public class CategoryRepository   {
         return Mind;
     }
 
+    public MutableLiveData<List<Category>> getDaily(){
+        MutableLiveData<List<Category>> daily=new MutableLiveData<>();
+
+        categoryService.getDaily().enqueue(new Callback<List<Category>>() {
+            @Override
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+                if(response.isSuccessful()){
+                    daily.setValue(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Category>> call, Throwable t) {
+                daily.setValue(null);
+            }
+        });
+        return daily;
+    }
+
     public MutableLiveData<List<Category>> getMusic(){
         MutableLiveData<List<Category>> Mind=new MutableLiveData<>();
 

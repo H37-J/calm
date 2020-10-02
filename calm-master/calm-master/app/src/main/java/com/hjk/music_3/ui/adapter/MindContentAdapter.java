@@ -16,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.hjk.music_3.R;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.phprequest.UpdateRequestLike;
 import com.hjk.music_3.data.local.model.Music;
 import com.hjk.music_3.databinding.ItemMindContentBinding;
@@ -111,13 +112,12 @@ public class MindContentAdapter extends RecyclerView.Adapter<MindContentAdapter.
                     heart.setVisibility(View.GONE);
                     heart_on.setVisibility(View.VISIBLE);
 
-                    String str= UserViewModel.getCurrent_user().getValue().getLike_music()+bno+",";
+                    String str=UserViewModel.getCurrent_user().getValue().getLike_music()+bno+",";
                     UserViewModel.getCurrent_user().getValue().setLike_music(str);
 
-
-                    UpdateRequestLike updateRequest=new UpdateRequestLike(UserViewModel.getCurrent_user().getValue().getId(),str,responseListener);
-                    RequestQueue queue= Volley.newRequestQueue(context);
-                    queue.add(updateRequest);
+                    User user=new User();
+                    user=UserViewModel.getCurrent_user().getValue();
+                    UserViewModel.user_update(user);
                 }
             });
 
@@ -130,16 +130,16 @@ public class MindContentAdapter extends RecyclerView.Adapter<MindContentAdapter.
                     heart.setVisibility(View.VISIBLE);
                     heart_on.setVisibility(View.GONE);
 
-                    String[] arr= StringUtils.str_split(UserViewModel.getCurrent_user().getValue().getLike_music());
+                    String[] arr=StringUtils.str_split(UserViewModel.getCurrent_user().getValue().getLike_music());
 
                     int index=StringUtils.getIndex(arr,music_item.getBno());
 
                     String[] array=StringUtils.remove(arr,index);
                     String s=StringUtils.merge(array);
                     UserViewModel.getCurrent_user().getValue().setLike_music(s);
-                    UpdateRequestLike updateRequest=new UpdateRequestLike(UserViewModel.getCurrent_user().getValue().getId(),s,responseListener);
-                    RequestQueue queue= Volley.newRequestQueue(context);
-                    queue.add(updateRequest);
+                    User user=new User();
+                    user=UserViewModel.getCurrent_user().getValue();
+                    UserViewModel.user_update(user);
                 }
             });
 

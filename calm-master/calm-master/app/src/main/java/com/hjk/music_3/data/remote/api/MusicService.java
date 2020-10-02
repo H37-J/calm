@@ -27,6 +27,23 @@ public interface MusicService {
     @GET("music_list_music/{Id}")
     Call<List<Music>> music_list_music(@Path("Id") int Id);
 
+    @GET("music_list_mind12")
+    Call<List<Music>> music_list_mind12();
+
+    @GET("music_list_music13")
+    Call<List<Music>> music_list_music13();
+
+    @GET("music_list_story")
+    Call<List<Music>> music_list_story();
+
+    @GET("music_list_scape")
+    Call<List<Music>> music_list_scape();
+
+    @GET("music_list_sleep")
+    Call<List<Music>> music_list_sleep();
+
+
+
     //php
     @GET("https://nowglobalhealing.com/wp-json/wp/v2/posts?access_token=loqemfjewmcf0iojjcz2a6qkgmlmngpodximreql&categories=58")
     Call<List<Music>> getMusicSleep();

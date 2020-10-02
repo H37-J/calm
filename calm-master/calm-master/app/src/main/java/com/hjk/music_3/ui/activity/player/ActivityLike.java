@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
 import com.hjk.music_3.data.local.model.Music;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.databinding.ActivityDreamBinding;
 import com.hjk.music_3.ui.adapter.DreamAdapter;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
@@ -49,7 +50,7 @@ public class ActivityLike extends AppCompatActivity implements DreamAdapter.OnIt
 
     public void getData(){
         musicViewModel=ViewModelProviders.of(this).get(MusicViewModel.class);
-        musicViewModel.getMusic_11().observe(this,m->{
+        musicViewModel.getMusic().observe(this,m->{
             if(m!=null){
                 setMusic(m);
             }
@@ -88,7 +89,11 @@ public class ActivityLike extends AppCompatActivity implements DreamAdapter.OnIt
 
     @Override
     public void onItemClicked(int pos, ImageView imageView){
-        MethodUtils.UpdateHistory(getApplication());
+        User user=new User();
+        user= UserViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(UserViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        UserViewModel.user_update(user);
 
         MusicApplication.getInstance().getServiceInterface().setInitLike();
 

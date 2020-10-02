@@ -9,13 +9,62 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f58a99-59f4-456b-850f-dbe9ef61be7a" name="Default Changelist" comment="" />
+    <list default="true" id="a9f58a99-59f4-456b-850f-dbe9ef61be7a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/calm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/utils/EncryptionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable-v24/pulse.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/local/model/Category.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/local/model/Category.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/MusicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/MusicRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/MusicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/MusicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/data/remote/api/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/MusicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/MusicActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/SplashActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/LoginActivity_php.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/LoginActivity_php.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/login/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ActivityLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ActivityLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ActivityMind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ActivityMind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/DreamActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/DreamActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/MusicContentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/MusicContentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/PlayerActivity2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/PlayerActivity2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/PlayerActivityLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/PlayerActivityLike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ScapeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/ScapeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/SleepActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/SleepActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/BackSelectActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/BackSelectActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/BreathPlayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/BreathPlayActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/SettingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/profile/SettingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/adapter/MindContentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/adapter/MindContentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/adapter/MusicContentAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/adapter/MusicContentAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/fragment/MainFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/fragment/MainFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/CateViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/CateViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/MusicViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/MusicViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/viewmodel/UserViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/utils/StringUtils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/utils/StringUtils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/utils/TimeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hjk/music_3/utils/TimeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_category_content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_category_content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mind.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mind.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_mind.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_mind.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_music.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_music_content.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_music_content.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/player_like.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/player_like.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="24ca99887b1c7ece" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_30" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -45,6 +94,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="ProjectId" id="1hnaCxcINUcFyBz02c6FZjNzPhk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,17 +105,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../calm_php/calm/calm-master/calm-master" />
     <property name="settings.editor.selected.configurable" value="memory.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ho\Desktop\calm\calm-master\calm-master\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\ho\Desktop\calm-master\calm-master\app\src\main\res\drawable-v24" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.SplashActivity (1)">
+  <component name="RunManager" selected="Android App.SplashActivity (2)">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -122,6 +176,57 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegisterActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="calm-master-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.hjk.music_3.ui.activity.login.RegisterActivity" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SleepActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="app" />
       <option name="DEPLOY" value="true" />
@@ -175,6 +280,57 @@
     </configuration>
     <configuration name="SplashActivity (1)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="Music_3-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="specific_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="com.hjk.music_3.ui.activity.SplashActivity" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SplashActivity (2)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="calm-master-app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -326,8 +482,61 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="calm-master-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="calm-master-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android App.SplashActivity (2)" />
+        <item itemvalue="Android App.RegisterActivity" />
         <item itemvalue="Android App.SplashActivity (1)" />
         <item itemvalue="Android App.SplashActivity" />
         <item itemvalue="Android App.SleepActivity" />
@@ -377,38 +586,39 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2477" y="215" key="AndroidCreateResourceFileDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600930377354" />
-    <state x="2827" y="216" key="FileChooserDialogImpl" timestamp="1600649235092">
+    <state x="2827" y="216" key="FileChooserDialogImpl" timestamp="1601340034156">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2827" y="216" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600649235092" />
-    <state width="1465" height="210" key="GridCell.Tab.0.bottom" timestamp="1601138546914">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1919" height="223" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601024078766" />
-    <state width="1465" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601138546914" />
-    <state width="1465" height="210" key="GridCell.Tab.0.center" timestamp="1601138546914">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1919" height="223" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601024078765" />
-    <state width="1465" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601138546914" />
-    <state width="1465" height="210" key="GridCell.Tab.0.left" timestamp="1601138546913">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1919" height="223" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601024078765" />
-    <state width="1465" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601138546913" />
-    <state width="1465" height="210" key="GridCell.Tab.0.right" timestamp="1601138546914">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1919" height="223" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601024078766" />
-    <state width="1465" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601138546914" />
-    <state x="2701" y="231" key="chooseDestDirectoryDialog" timestamp="1600851364707">
+    <state x="2827" y="216" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601340034156" />
+    <state x="726" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601271750923" />
+    <state width="1711" height="220" key="GridCell.Tab.0.bottom" timestamp="1601341504010">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2701" y="231" key="chooseDestDirectoryDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600851364707" />
-    <state x="516" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1601138839852">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1711" height="220" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601341504010" />
+    <state width="1487" height="187" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601278436527" />
+    <state width="1711" height="220" key="GridCell.Tab.0.center" timestamp="1601341504010">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2565" y="347" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600994784830" />
+    <state width="1711" height="220" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601341504010" />
+    <state width="1487" height="187" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601278436527" />
+    <state width="1711" height="220" key="GridCell.Tab.0.left" timestamp="1601341504010">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1711" height="220" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601341504010" />
+    <state width="1487" height="187" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601278436527" />
+    <state width="1711" height="220" key="GridCell.Tab.0.right" timestamp="1601341504010">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1711" height="220" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601341504010" />
+    <state width="1487" height="187" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601278436527" />
+    <state x="2701" y="231" key="chooseDestDirectoryDialog" timestamp="1601281289603">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2701" y="231" key="chooseDestDirectoryDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601281289603" />
+    <state x="2565" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1601339949976">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2565" y="347" key="com.intellij.ide.util.TipDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601339949976" />
     <state x="516" y="275" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1601138839852" />
     <state x="2260" y="223" key="run.anything.popup" timestamp="1600847258381">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -429,7 +639,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/hjk/music_3/ui/activity/player/SleepActivity.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

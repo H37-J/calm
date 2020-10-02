@@ -11,6 +11,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.hjk.music_3.R;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.phprequest.UpdateRequest;
 import com.hjk.music_3.databinding.ActivityBackselectBinding;
 import com.hjk.music_3.ui.viewmodel.BackViewModel;
@@ -46,11 +47,17 @@ public class BackSelectActivity extends AppCompatActivity {
         backViewModel.getBack().observe(this,b->{
             backViewModel.set_current_back(b.get(pos_));
         });
+        User user=new User();
+        user=UserViewModel.getCurrent_user().getValue();
+        user.setSave_back(Integer.toString(pos_));
+        UserViewModel.user_update(user);
+
+
 
         //php
-        UpdateRequest updateRequest=new UpdateRequest(userViewModel.getCurrent_user().getValue().getId(),pos_,responseListener);
-        RequestQueue queue= Volley.newRequestQueue(BackSelectActivity.this);
-        queue.add(updateRequest);
+//        UpdateRequest updateRequest=new UpdateRequest(userViewModel.getCurrent_user().getValue().getId(),pos_,responseListener);
+//        RequestQueue queue= Volley.newRequestQueue(BackSelectActivity.this);
+//        queue.add(updateRequest);
 
         ToastUtils.set(getApplication(),"배경화면이 바뀌었습니다",2);
         startActivity(intent);

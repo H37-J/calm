@@ -15,12 +15,13 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.android.volley.BuildConfig;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.hjk.music_3.BuildConfig;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.phprequest.UpdateRequestLike;
 import com.hjk.music_3.data.local.model.Music;
 import com.hjk.music_3.databinding.Player4Binding;
@@ -43,6 +44,7 @@ public class PlayerActivity2 extends AppCompatActivity {
     MusicViewModel musicViewModel;
     UserViewModel userViewModel;
 
+    String[] array;
     String bno;
 
 
@@ -61,6 +63,8 @@ public class PlayerActivity2 extends AppCompatActivity {
     public void onResume(){
         super.onResume();
         binding.heartOn.setVisibility(View.GONE);
+
+
 
         binding.background.setOnTouchListener(new OnSwipeTouchListener(PlayerActivity2.this) {
 
@@ -105,6 +109,25 @@ public class PlayerActivity2 extends AppCompatActivity {
                 binding.maintext.setText(music.getTitle());
                 Binding.PicassoImage(binding.background, music.getImage());
                 bno=music.getBno();
+
+                String s=UserViewModel.getCurrent_user().getValue().getSave_music()+bno+",";
+                UserViewModel.getCurrent_user().getValue().setSave_music(s);
+
+                String[] arr= StringUtils.str_split(s);
+
+                if(arr.length>8) {
+                    for(int i=0; i<3; i++) {
+                        array = StringUtils.remove(arr, i);
+                        System.out.println("새로운 값들:" + StringUtils.merge(array));
+
+                    }
+                    String s2 = StringUtils.merge(array);
+                    UserViewModel.getCurrent_user().getValue().setSave_music(s2);
+                }
+
+                User user=new User();
+                user=UserViewModel.getCurrent_user().getValue();
+                UserViewModel.user_update(user);
             }
         });
 
@@ -166,9 +189,10 @@ public class PlayerActivity2 extends AppCompatActivity {
         String str=userViewModel.getCurrent_user().getValue().getLike_music()+bno+",";
         userViewModel.getCurrent_user().getValue().setLike_music(str);
 
-        UpdateRequestLike updateRequest=new UpdateRequestLike(userViewModel.getCurrent_user().getValue().getId(),str,responseListener);
-        RequestQueue queue= Volley.newRequestQueue(PlayerActivity2.this);
-        queue.add(updateRequest);
+        User user=new User();
+        user=UserViewModel.getCurrent_user().getValue();
+        UserViewModel.user_update(user);
+
 
         ToastUtils.set(getApplicationContext(),"이 음악을 즐겨찾기에 추가 되었습니다",2);
 
@@ -197,9 +221,10 @@ public class PlayerActivity2 extends AppCompatActivity {
         System.out.println("새로운 값들:"+StringUtils.merge(array));
         String s=StringUtils.merge(array);
         userViewModel.getCurrent_user().getValue().setLike_music(s);
-        UpdateRequestLike updateRequest=new UpdateRequestLike(userViewModel.getCurrent_user().getValue().getId(),s,responseListener);
-        RequestQueue queue= Volley.newRequestQueue(PlayerActivity2.this);
-        queue.add(updateRequest);
+        User user=new User();
+        user=UserViewModel.getCurrent_user().getValue();
+        userViewModel.user_update(user);
+
 
     }
 
@@ -234,7 +259,7 @@ public class PlayerActivity2 extends AppCompatActivity {
 
     public void share() {
         Picasso.get().load(
-                musicViewModel.getCurrent_music3().getValue().getImage()).into(new Target() {
+                musicViewModel.getCurrent_music_all().getValue().getImage()).into(new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 Intent i = new Intent(Intent.ACTION_SEND);

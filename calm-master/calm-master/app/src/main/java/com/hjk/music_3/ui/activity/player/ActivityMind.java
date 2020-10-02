@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
 import com.hjk.music_3.data.local.model.Music;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.databinding.ActivityMindBinding;
 import com.hjk.music_3.ui.adapter.MindContentAdapter;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 
 import java.util.List;
 
@@ -59,7 +61,12 @@ public class ActivityMind extends AppCompatActivity implements MindContentAdapte
 
     @Override
     public void onItemClicked(int pos, LinearLayout linearLayout) throws Exception{
+        User user=new User();
+        user= UserViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(UserViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
 
+        UserViewModel.user_update(user);
         MusicApplication.getInstance().getServiceInterface().setInit34();
 
         musicViewModel.setPos(pos);

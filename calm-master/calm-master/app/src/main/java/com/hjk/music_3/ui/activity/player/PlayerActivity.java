@@ -13,10 +13,13 @@ import androidx.lifecycle.ViewModelProviders;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
 import com.hjk.music_3.data.local.model.Music;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.databinding.Player1Binding;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 import com.hjk.music_3.utils.Binding;
 import com.hjk.music_3.utils.OnSwipeTouchListener;
+import com.hjk.music_3.utils.StringUtils.StringUtils;
 import com.hjk.music_3.utils.ToastUtils;
 
 public class PlayerActivity extends AppCompatActivity {
@@ -25,8 +28,9 @@ public class PlayerActivity extends AppCompatActivity {
     MusicViewModel musicViewModel;
     String time;
     Thread t;
+    String bno;
 
-
+    String[] array;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,23 @@ public class PlayerActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+        musicViewModel.getRandom2().observe(this,m->{
+            if(m==false) {
+                binding.random.setImageResource(R.drawable.icon_random);
+            }
+            else{
+                binding.random.setImageResource(R.drawable.icon_random_on);
+              }
+        });
+
+        musicViewModel.getLoop2().observe(this,m-> {
+            if (m == false) {
+                binding.loop.setImageResource(R.drawable.icon_reverse);
+            } else {
+                binding.loop.setImageResource(R.drawable.icon_reverse_only_one);
+            }
+        });
+
 
         binding.background.setOnTouchListener(new OnSwipeTouchListener(PlayerActivity.this) {
 
@@ -106,6 +127,26 @@ public class PlayerActivity extends AppCompatActivity {
             public void onChanged(Music music){
                 binding.titleText.setText(music.getTitle());
                 Binding.PicassoImage(binding.background, music.getImage());
+                bno=music.getBno();
+
+                String s=UserViewModel.getCurrent_user().getValue().getSave_music()+bno+",";
+                UserViewModel.getCurrent_user().getValue().setSave_music(s);
+
+                String[] arr= StringUtils.str_split(s);
+
+                if(arr.length>8) {
+                    for(int i=0; i<3; i++) {
+                         array = StringUtils.remove(arr, i);
+                        System.out.println("새로운 값들:" + StringUtils.merge(array));
+
+                    }
+                    String s2 = StringUtils.merge(array);
+                    UserViewModel.getCurrent_user().getValue().setSave_music(s2);
+                }
+
+                User user=new User();
+                user=UserViewModel.getCurrent_user().getValue();
+                UserViewModel.user_update(user);
             }
         });
 
@@ -193,12 +234,50 @@ public class PlayerActivity extends AppCompatActivity {
     }
 
     public void next()   {
+        if(MusicApplication.getInstance().getServiceInterface().getInit11())
         MusicApplication.getInstance().getServiceInterface().next11();
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit12())
+            MusicApplication.getInstance().getServiceInterface().next12();
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit13())
+            MusicApplication.getInstance().getServiceInterface().next13();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_1())
+            MusicApplication.getInstance().getServiceInterface().nextSleep();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_2())
+            MusicApplication.getInstance().getServiceInterface().nextDream();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_3())
+            MusicApplication.getInstance().getServiceInterface().nextScape();
 
     }
 
     public void prev(){
-        MusicApplication.getInstance().getServiceInterface().prev11();
+        if(MusicApplication.getInstance().getServiceInterface().getInit11())
+            MusicApplication.getInstance().getServiceInterface().prev11();
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit12())
+            MusicApplication.getInstance().getServiceInterface().prev12();
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit13())
+            MusicApplication.getInstance().getServiceInterface().prev13();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_1())
+            MusicApplication.getInstance().getServiceInterface().prevSleep();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_2())
+            MusicApplication.getInstance().getServiceInterface().prevDream();
+
+
+        if(MusicApplication.getInstance().getServiceInterface().getInit2_3())
+            MusicApplication.getInstance().getServiceInterface().prevScape();
 
     }
 
@@ -223,32 +302,39 @@ public class PlayerActivity extends AppCompatActivity {
     }
 
     public void set_loop(){
-        if(musicViewModel.getLoop()==false) {
-            binding.loop.setImageResource(R.drawable.icon_reverse_only_one);
+            if (musicViewModel.getLoop()== false) {
+                binding.loop.setImageResource(R.drawable.icon_reverse_only_one);
 
-            musicViewModel.setLoop(true);
-            ToastUtils.set(getApplicationContext(),"반복재생 실행",2);
+                musicViewModel.setLoop(true);
+                musicViewModel.setLoop22(true);
+                ToastUtils.set(getApplicationContext(), "반복재생 실행", 2);
 
-        }
-        else{
-            binding.loop.setImageResource(R.drawable.icon_reverse);
-            musicViewModel.setLoop(false);
-            ToastUtils.set(getApplicationContext(),"반복재생 종료",2);
+            } else {
+                binding.loop.setImageResource(R.drawable.icon_reverse);
+                musicViewModel.setLoop(false);
+                musicViewModel.setLoop22(false);
+                ToastUtils.set(getApplicationContext(), "반복재생 종료", 2);
 
-        }
+            }
+
     }
 
     public void set_random(){
-        if(musicViewModel.getRandom()==false) {
-            binding.random.setImageResource(R.drawable.icon_random_on);
-            musicViewModel.setRandom(true);
-            ToastUtils.set(getApplicationContext(),"랜덤재생 실행",2);
-        }
-        else{
-            binding.random.setImageResource(R.drawable.icon_random);
-            musicViewModel.setRandom(false);
-            ToastUtils.set(getApplicationContext(),"랜덤재생 종료",2);
-        }
+
+            if(musicViewModel.getRandom()==false) {
+                binding.random.setImageResource(R.drawable.icon_random_on);
+                musicViewModel.setRandom(true);
+                musicViewModel.setRandom2(true);
+                ToastUtils.set(getApplicationContext(),"랜덤재생 실행",2);
+            }
+            else{
+                binding.random.setImageResource(R.drawable.icon_random);
+                musicViewModel.setRandom(false);
+                musicViewModel.setRandom2(false);
+                ToastUtils.set(getApplicationContext(),"랜덤재생 종료",2);
+            }
+
+
     }
 
     public void Intent_Time(){

@@ -85,6 +85,94 @@ public class MusicRepository {
         return music;
     }
 
+    public MutableLiveData<List<Music>> music_list_mind12( ){
+        MutableLiveData<List<Music>> music=new MutableLiveData<>();
+        musicService.music_list_mind12().enqueue(new Callback<List<Music>>(){
+            @Override
+            public void onResponse(Call<List<Music>> call, Response<List<Music>> response){
+                if(response.isSuccessful()){
+                    music.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Music>> call, Throwable e){
+                music.setValue(null);
+            }
+        });
+        return music;
+    }
+
+
+    public MutableLiveData<List<Music>> music_list_music13( ){
+        MutableLiveData<List<Music>> music=new MutableLiveData<>();
+        musicService.music_list_music13().enqueue(new Callback<List<Music>>(){
+            @Override
+            public void onResponse(Call<List<Music>> call, Response<List<Music>> response){
+                if(response.isSuccessful()){
+                    music.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Music>> call, Throwable e){
+                music.setValue(null);
+            }
+        });
+        return music;
+    }
+
+    public MutableLiveData<List<Music>> music_list_sleep( ){
+        MutableLiveData<List<Music>> music=new MutableLiveData<>();
+        musicService.music_list_sleep().enqueue(new Callback<List<Music>>(){
+            @Override
+            public void onResponse(Call<List<Music>> call, Response<List<Music>> response){
+                if(response.isSuccessful()){
+                    music.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Music>> call, Throwable e){
+                music.setValue(null);
+            }
+        });
+        return music;
+    }
+
+    public MutableLiveData<List<Music>> music_list_scape( ){
+        MutableLiveData<List<Music>> music=new MutableLiveData<>();
+        musicService.music_list_scape().enqueue(new Callback<List<Music>>(){
+            @Override
+            public void onResponse(Call<List<Music>> call, Response<List<Music>> response){
+                if(response.isSuccessful()){
+                    music.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Music>> call, Throwable e){
+                music.setValue(null);
+            }
+        });
+        return music;
+    }
+
+    public MutableLiveData<List<Music>> music_list_story( ){
+        MutableLiveData<List<Music>> music=new MutableLiveData<>();
+        musicService.music_list_story().enqueue(new Callback<List<Music>>(){
+            @Override
+            public void onResponse(Call<List<Music>> call, Response<List<Music>> response){
+                if(response.isSuccessful()){
+                    music.setValue(response.body());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Music>> call, Throwable e){
+                music.setValue(null);
+            }
+        });
+        return music;
+    }
+
+
+
 
 
 

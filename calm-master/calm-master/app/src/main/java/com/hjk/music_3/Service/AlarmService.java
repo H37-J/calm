@@ -14,15 +14,18 @@ import android.os.IBinder;
 import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.hjk.music_3.R;
 import com.hjk.music_3.ui.activity.profile.AlarmActivity;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 
 import org.jetbrains.annotations.Nullable;
 
 public class AlarmService extends Service {
 
     MediaPlayer mediaPlayer;
+    UserViewModel userViewModel;
     int startId;
     boolean Running;
 
@@ -35,7 +38,6 @@ public class AlarmService extends Service {
     @Override
     public void onCreate(){
         super.onCreate();
-
         if(Build.VERSION.SDK_INT>=26) {
             String CHANNEL_ID = "default";
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
@@ -48,11 +50,14 @@ public class AlarmService extends Service {
             builder.setContentTitle("마음 챙김");
             builder.setContentText("일어날 시간입니다.");
             builder.setColor(Color.RED);
-
             builder.setAutoCancel(true);
             builder.setContentIntent(pendingIntent);
             startForeground(1,builder.build());
         }
+    }
+
+    public  void setViewModel(UserViewModel u){
+         this.userViewModel=u;
     }
 
     @Override

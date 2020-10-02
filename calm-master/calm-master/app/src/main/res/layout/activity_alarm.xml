@@ -162,7 +162,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button81"
+        android:id="@+id/cancel"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"

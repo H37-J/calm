@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.phprequest.UpdateRequestLike;
 import com.hjk.music_3.data.local.model.Music;
 import com.hjk.music_3.databinding.PlayerLikeBinding;
@@ -167,9 +168,10 @@ public class PlayerActivityLike extends AppCompatActivity {
         String str=userViewModel.getCurrent_user().getValue().getLike_music()+bno+",";
         userViewModel.getCurrent_user().getValue().setLike_music(str);
 
-        UpdateRequestLike updateRequest=new UpdateRequestLike(userViewModel.getCurrent_user().getValue().getId(),str,responseListener);
-        RequestQueue queue= Volley.newRequestQueue(PlayerActivityLike.this);
-        queue.add(updateRequest);
+
+        User user=new User();
+        user=UserViewModel.getCurrent_user().getValue();
+        UserViewModel.user_update(user);
 
         ToastUtils.set(getApplicationContext(),"이 음악을 즐겨찾기에 추가 되었습니다",2);
 
@@ -197,10 +199,10 @@ public class PlayerActivityLike extends AppCompatActivity {
         String[] array=StringUtils.remove(arr,index);
         System.out.println("새로운 값들:"+StringUtils.merge(array));
         String s=StringUtils.merge(array);
-        userViewModel.getCurrent_user().getValue().setLike_music(s);
-        UpdateRequestLike updateRequest=new UpdateRequestLike(userViewModel.getCurrent_user().getValue().getId(),s,responseListener);
-        RequestQueue queue= Volley.newRequestQueue(PlayerActivityLike.this);
-        queue.add(updateRequest);
+        UserViewModel.getCurrent_user().getValue().setLike_music(s);
+        User user=new User();
+        user=UserViewModel.getCurrent_user().getValue();
+        UserViewModel.user_update(user);
 
     }
 

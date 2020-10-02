@@ -18,4 +18,10 @@ public class TimeUtils {
        return format.format(System.currentTimeMillis());
    }
 
+   public static String getHour(){
+       SimpleDateFormat format=new SimpleDateFormat("HH");
+
+       return format.format(System.currentTimeMillis());
+   }
+
 }

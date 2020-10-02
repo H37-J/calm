@@ -75,7 +75,6 @@ public class LoginActivity_php extends AppCompatActivity {
                         String like_music=jsonObject.getString("like_music");
 
                         String last_login=jsonObject.getString("last_login");
-                        last_login=TimeUtils.getDayCom(); //현재 년도 월일 받아오기
 
                         if(Integer.parseInt(last_login)==0){
                             count=1;
@@ -95,7 +94,7 @@ public class LoginActivity_php extends AppCompatActivity {
                         user.setSave_day(Integer.toString(count));
                         user.setSave_history(save_history);
                         user.setSave_time(save_time);
-                        user.setLast_login(last_login);
+                        user.setLast_login(TimeUtils.getDayCom());
                         user.setLike_music(like_music);
 
 

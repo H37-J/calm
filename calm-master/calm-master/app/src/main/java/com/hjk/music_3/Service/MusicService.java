@@ -171,7 +171,7 @@ public class MusicService extends LifecycleService  {
 
     //php
     public void init11(){
-        String str=musicViewModel.current_music11().getValue().getMp3();
+        String str=musicViewModel.getCurrent_music_recent().getValue().getMp3();
         setData(str);
     }
     public void init12(){
@@ -769,7 +769,7 @@ public class MusicService extends LifecycleService  {
                     notification.bigContentView.setViewVisibility(R.id.player_pause, isPaused ? View.VISIBLE : View.GONE);
                     notification.bigContentView.setViewVisibility(R.id.player_play, isPaused ? View.GONE : View.VISIBLE);
                     notification.bigContentView.setTextViewText(R.id.player_song_name, musicViewModel.current_music_all().getValue().getTitle());
-                    notification.flags |= Notification.FLAG_ONGOING_EVENT;
+                    notification.flags |= Notification.FLAG_AUTO_CANCEL;
                     Picasso.get()
                             .load(musicViewModel.current_music_all().getValue().getImage())
                             .into(notification.bigContentView,R.id.player_album_art,1, notification);

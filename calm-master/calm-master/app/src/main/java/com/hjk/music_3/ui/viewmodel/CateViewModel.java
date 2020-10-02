@@ -33,7 +33,7 @@ public class CateViewModel extends AndroidViewModel {
             return;
         cate_mind= categoryRepository.getMind();
         cate_music=categoryRepository.getMusic();
-        day=categoryRepository.getImage();
+        day=categoryRepository.getDaily();
     }
 
     public MutableLiveData<List<Category>> getCateMind(){

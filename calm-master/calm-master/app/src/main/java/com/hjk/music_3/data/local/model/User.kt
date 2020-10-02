@@ -31,7 +31,7 @@ data class User (
 
         @ColumnInfo(name="save_music")
         @SerializedName("save_music")
-        var save_music: Long=0,
+        var save_music: String?= null,
 
         @ColumnInfo(name="save_back")
         @SerializedName("save_back")

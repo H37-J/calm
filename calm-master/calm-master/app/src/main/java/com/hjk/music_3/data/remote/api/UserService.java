@@ -18,14 +18,18 @@ public interface UserService {
 
     @GET("user_list")
     Call<List<User>> getUser();
+
     @GET("user_list/{id}")
     Call<User> getLogin(@Path("id") String id);
+    @FormUrlEncoded
+    @POST("user_update")
+    Call<ResponseBody> user_update(@Field("objJson") String objJson);
 
     @FormUrlEncoded
     @POST("user_insert")
     Call<ResponseBody> sign(@Field("objJson") String objJson);
     @FormUrlEncoded
-    @POST("user_update")
+    @POST("pass_change")
     Call<ResponseBody> pass_change(@Field("objJson") String objJson);
 
     //php

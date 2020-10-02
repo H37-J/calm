@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
 import com.hjk.music_3.data.local.model.Music;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.databinding.ActivityDreamBinding;
 import com.hjk.music_3.ui.adapter.DreamAdapter;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 import com.hjk.music_3.utils.ItemOffDecoration;
 import com.hjk.music_3.utils.MethodUtils;
 
@@ -62,7 +64,11 @@ public class SleepActivity extends AppCompatActivity implements DreamAdapter.OnI
 
     @Override
     public void onItemClicked(int pos, ImageView imageView){
-        MethodUtils.UpdateHistory(getApplication());
+        User user=new User();
+        user= UserViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(UserViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        UserViewModel.user_update(user);
 
 
         MusicApplication.getInstance().getServiceInterface().setInit21();

@@ -29,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:post="@{music.getCurrent_like_music().image}" />
+            app:post="@{music.current_music_all().image}" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
 
-            android:text="@{music.getCurrent_like_music().title}"
+            android:text="@{music.current_music_all().title}"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="@{music.getCurrent_music3().content}"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/titleText"

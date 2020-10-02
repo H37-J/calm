@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
 import com.hjk.music_3.data.local.model.Music;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.databinding.ActivityCategoryContentBinding;
 import com.hjk.music_3.ui.adapter.MusicContentAdapter;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 import com.hjk.music_3.utils.MethodUtils;
 
 import java.util.List;
@@ -67,7 +69,12 @@ public class MusicContentActivity extends AppCompatActivity implements MusicCont
 
     @Override
     public void onItemClicked(int pos, LinearLayout linearLayout,ImageView imageView) throws Exception{
-        MethodUtils.UpdateHistory(getApplication());
+        User user=new User();
+        user= UserViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(UserViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        UserViewModel.user_update(user);
+
         MusicApplication.getInstance().getServiceInterface().setInitMusic();
 
         musicViewModel.setPos(pos);

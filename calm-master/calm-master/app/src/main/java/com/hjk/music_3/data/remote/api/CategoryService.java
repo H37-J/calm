@@ -22,4 +22,9 @@ public interface CategoryService {
 
     @GET("http://these9909.cafe24.com/cate_list_music")
     Call<List<Category>> getMusic();
+
+    @GET("http://these9909.cafe24.com/cate_list_daily")
+    Call<List<Category>> getDaily();
+
+
 }

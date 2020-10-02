@@ -6,16 +6,20 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.hjk.music_3.R;
 import com.hjk.music_3.Receiver.Alarm_Receiver;
+import com.hjk.music_3.Service.AlarmService;
 import com.hjk.music_3.databinding.ActivityAlarmBinding;
+import com.hjk.music_3.ui.viewmodel.UserViewModel;
 import com.hjk.music_3.utils.ToastUtils;
 
 import java.util.Calendar;
@@ -23,9 +27,11 @@ import java.util.Calendar;
 public class AlarmActivity extends AppCompatActivity {
 
     ActivityAlarmBinding binding;
+    UserViewModel userViewModel;
     AlarmManager alarmManager;
     Context context;
     Intent intent=getIntent();
+    AlarmService alarmService=new AlarmService();
     String ST;
     int SH;
     int SM;
@@ -35,8 +41,28 @@ public class AlarmActivity extends AppCompatActivity {
         super.onCreate(saveInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         binding= DataBindingUtil.setContentView(this, R.layout.activity_alarm);
+        userViewModel= ViewModelProviders.of(this).get(UserViewModel.class);
         binding.setActivity(this);
+        userViewModel.setAlarm(0);
+        alarmService.setViewModel(userViewModel);
         this.context=this;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        UserViewModel.getAlarm().observe(this,a->{
+            if(a==0) {
+                binding.cancel.setVisibility(View.GONE);
+                binding.button8.setVisibility(View.GONE);
+            }
+            else {
+                binding.cancel.setVisibility(View.VISIBLE);
+                binding.button8.setVisibility(View.VISIBLE);
+            }
+
+        });
+
     }
 
     public void Intent_Alarm(){
@@ -61,9 +87,13 @@ public class AlarmActivity extends AppCompatActivity {
         },hour,minute,false);
         timePickerDialog.setTitle("시간 설정");
         timePickerDialog.show();
+        binding.button8.setVisibility(View.VISIBLE);
+        userViewModel.setAlarm(1);
+
     }
 
     public void Set_Alarm(){
+
         Calendar calendar=Calendar.getInstance();
         alarmManager=(AlarmManager)getSystemService(ALARM_SERVICE);
         calendar.set(Calendar.HOUR_OF_DAY, SH);
@@ -80,6 +110,7 @@ public class AlarmActivity extends AppCompatActivity {
     }
 
     public void Cancel_Alarm(){
+        userViewModel.setAlarm(0);
         Toast.makeText(context, "알람을 해제 합니다.", Toast.LENGTH_SHORT).show();
         alarmManager.cancel(pendingIntent);
         final Intent alarm_intent = new Intent(getApplicationContext(), Alarm_Receiver.class);

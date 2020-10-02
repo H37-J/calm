@@ -12,6 +12,8 @@ import com.hjk.music_3.data.remote.api.RetrofitService;
 import com.hjk.music_3.data.remote.api.UserService;
 import com.hjk.music_3.databinding.ActivityPasschBinding;
 import com.hjk.music_3.ui.viewmodel.UserViewModel;
+import com.hjk.music_3.utils.EncryptionUtils;
+import com.hjk.music_3.utils.ToastUtils;
 
 public class PassChangeActivity extends AppCompatActivity {
 
@@ -29,13 +31,18 @@ public class PassChangeActivity extends AppCompatActivity {
     }
 
     public void update(){
-        if(!(userViewModel.getCurrent_user().getValue().getPwd().trim().equals(binding.currentpass.getText().toString().trim()))){
+        String pwd=EncryptionUtils.encryptSHA256(binding.currentpass.getText().toString().trim());
+        String update_pwd=EncryptionUtils.encryptSHA256(binding.chPass.getText().toString().trim());
+        if(!(userViewModel.getCurrent_user().getValue().getPwd().trim().equals(pwd))){
             System.out.println(userViewModel.getCurrent_user().getValue().getPwd());
-            System.out.println(binding.currentpass.getText().toString());
-            Toast.makeText(getApplicationContext(),"현재 비밀번호가 틀립니다.",Toast.LENGTH_SHORT).show();;
+            System.out.println(pwd);
+            ToastUtils.set(getApplicationContext(),"현재 비밀번호가 다릅니다",2);
+
         }
         else{
-
+            ToastUtils.set(getApplicationContext(),"비밀번호가 변경 되었습니다",2);
+            userViewModel.getCurrent_user().getValue().setPwd(update_pwd);
+            userViewModel.pass_change(userViewModel.getCurrent_user().getValue());
         }
 
 

@@ -52,16 +52,21 @@ public class BreathPlayActivity extends AppCompatActivity implements SettingsDia
         binding.back.setBlurredImg(getResources().getDrawable(R.drawable.i12));
         binding.back.setBlurredLevel(100);
 
+
+
+
         breathViewModel= ViewModelProviders.of(this).get(BreathViewModel.class);
         statusText = findViewById(R.id.txt_status);
         statusText.setText(Constants.INHALE);
         outerCircleView = findViewById(R.id.v_circle_outer);
         innerCircleView = findViewById(R.id.v_circle_inner);
+
+                setupBackgroundColor();
+                prepareAnimations();
         statusText.startAnimation(animationInhaleText);
         innerCircleView.startAnimation(animationInhaleInnerCircle);
 
-        setupBackgroundColor();
-        prepareAnimations();
+
         t=new Thread();
         t.start();
         }

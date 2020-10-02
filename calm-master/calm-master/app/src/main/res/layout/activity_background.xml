@@ -117,7 +117,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
         android:layout_marginBottom="30dp"
-        android:text="저녁 시간이 되면 앱 테마가 어두운 색으로 변합니다."
+        android:text="자신이 원하는 배경화면을 설정해 보세요"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

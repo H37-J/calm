@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.hjk.music_3.R;
 import com.hjk.music_3.Service.MusicApplication;
+import com.hjk.music_3.data.local.model.User;
 import com.hjk.music_3.phprequest.UpdateRequestLike;
 import com.hjk.music_3.data.local.model.Music;
 import com.hjk.music_3.databinding.ItemMusicContentBinding;
@@ -132,10 +134,9 @@ public class MusicContentAdapter extends RecyclerView.Adapter<MusicContentAdapte
                     String str=UserViewModel.getCurrent_user().getValue().getLike_music()+bno+",";
                     UserViewModel.getCurrent_user().getValue().setLike_music(str);
 
-
-                    UpdateRequestLike updateRequest=new UpdateRequestLike(UserViewModel.getCurrent_user().getValue().getId(),str,responseListener);
-                    RequestQueue queue= Volley.newRequestQueue(context);
-                    queue.add(updateRequest);
+                    User user=new User();
+                    user=UserViewModel.getCurrent_user().getValue();
+                    UserViewModel.user_update(user);
                 }
             });
 
@@ -155,9 +156,9 @@ public class MusicContentAdapter extends RecyclerView.Adapter<MusicContentAdapte
                     String[] array=StringUtils.remove(arr,index);
                     String s=StringUtils.merge(array);
                     UserViewModel.getCurrent_user().getValue().setLike_music(s);
-                    UpdateRequestLike updateRequest=new UpdateRequestLike(UserViewModel.getCurrent_user().getValue().getId(),s,responseListener);
-                    RequestQueue queue= Volley.newRequestQueue(context);
-                    queue.add(updateRequest);
+                    User user=new User();
+                    user=UserViewModel.getCurrent_user().getValue();
+                    UserViewModel.user_update(user);
                 }
             });
 
@@ -166,6 +167,7 @@ public class MusicContentAdapter extends RecyclerView.Adapter<MusicContentAdapte
                 if (current_bno == Integer.parseInt(music_item.getBno())) {
                     if (clicked == pos) {
                         itemMusicContentBinding.playBtn.setVisibility(View.GONE);
+                        Glide.with(context).load(R.drawable.pulse).into(itemMusicContentBinding.playBtn2);
                         itemMusicContentBinding.playBtn2.setVisibility(View.VISIBLE);
 
                     } else {

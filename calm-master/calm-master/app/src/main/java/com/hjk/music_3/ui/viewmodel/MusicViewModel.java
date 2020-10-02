@@ -28,6 +28,7 @@ public class MusicViewModel extends AndroidViewModel {
     private static MutableLiveData<List<Music>> music_3;
     private static MutableLiveData<List<Music>> music_music;
     private static MutableLiveData<List<Music>> like_music=new MutableLiveData<List<Music>>();
+    private static MutableLiveData<List<Music>> music_recent=new MutableLiveData<>();
 
     private static MutableLiveData<Music> current_music=new MutableLiveData<Music>();
     private static MutableLiveData<Music> current_music_dream=new MutableLiveData<Music>();
@@ -40,6 +41,8 @@ public class MusicViewModel extends AndroidViewModel {
     private static MutableLiveData<Music> current_like_music=new MutableLiveData<Music>();
     private static MutableLiveData<Music> current_music3=new MutableLiveData<Music>();
     private static MutableLiveData<Music> current_music_music=new MutableLiveData<Music>();
+    private static MutableLiveData<Music> current_music_recent=new MutableLiveData<Music>();
+
 
     public static int time=0;
     public static int pos=1;
@@ -48,10 +51,15 @@ public class MusicViewModel extends AndroidViewModel {
     public static MutableLiveData<Integer> rem_time=new MutableLiveData<Integer>();
     public static MutableLiveData<Integer> Seek=new MutableLiveData<Integer>();
     public static MutableLiveData<Boolean> isPlaying=new MutableLiveData<Boolean>();
+    public static MutableLiveData<Boolean> random2=new MutableLiveData<Boolean>();
+    public static MutableLiveData<Boolean> loop2=new MutableLiveData<Boolean>();
+
 
     public static boolean timer=false;
-    public static boolean loop=false;
     public static boolean random=false;
+    public static boolean loop=false;
+
+
 
     public static int save_time;
 
@@ -67,13 +75,13 @@ public class MusicViewModel extends AndroidViewModel {
        if (music != null)
            return;
        music = musicRepository.getMusic();
-       music_sleep = musicRepository.getMusicSleep();
-       music_dream = musicRepository.getMusicDream();
-       music_scape=musicRepository.getMusicScape();
+       music_sleep = musicRepository.music_list_sleep();
+       music_dream = musicRepository.music_list_story();
+       music_scape=musicRepository.music_list_scape();
 
-       music_11=musicRepository.getMusic11();
-       music_12=musicRepository.getMusic12();
-       music_13=musicRepository.getMusic13();
+       music_11=musicRepository.getMusic();
+       music_12=musicRepository.music_list_mind12();
+       music_13=musicRepository.music_list_music13();
    }
 
    public void setSave_time(int save_time){
@@ -81,6 +89,7 @@ public class MusicViewModel extends AndroidViewModel {
     }
     public void setLike_music(List<Music> m){ like_music.setValue(m); }
     public void setCurrent_like_music(int pos){ current_like_music.setValue(getLike_music().getValue().get(pos)); }
+
 
     public static int getSave_time(){
         return save_time;
@@ -92,8 +101,16 @@ public class MusicViewModel extends AndroidViewModel {
         return current_like_music;
     }
 
+    public void setMusic_recent(List<Music> m){music_recent.setValue(m);}
+    public MutableLiveData<List<Music>> getMusic_recent(){
+        return music_recent;
+    }
+
+    public void setCurrent_music_recent(int pos){current_music_recent.setValue(getMusic_recent().getValue().get(pos));}
+    public MutableLiveData<Music> getCurrent_music_recent(){return current_music_recent;}
+
     public int getSize(){ return music.getValue().size();}
-    public int getSizeMusic11(){return music_11.getValue().size();}
+    public int getSizeMusic11(){return music_recent.getValue().size();}
     public int getSizeMusic12(){return music_12.getValue().size();}
     public int getSizeMusic13(){return music_13.getValue().size();}
     public int getSizeDream(){return music_dream.getValue().size();}
@@ -156,7 +173,6 @@ public class MusicViewModel extends AndroidViewModel {
     public static MutableLiveData<Music> getCurrent_music_music(){return current_music_music;}
     public static MutableLiveData<Music> getCurrent_music_all(){return current_music_all;}
 
-
     public void set_current_music_3(int pos){
 
         current_music3.setValue(getMusic_32().getValue().get(pos));
@@ -215,7 +231,7 @@ public class MusicViewModel extends AndroidViewModel {
         }
 
         if(MusicApplication.getInstance().getServiceInterface().getInit11())
-            current_music_all.setValue(getMusic_11().getValue().get(pos));
+            current_music_all.setValue(getMusic_recent().getValue().get(pos));
 
         if(MusicApplication.getInstance().getServiceInterface().getInit12())
             current_music_all.setValue(getMusic_12().getValue().get(pos));
@@ -256,6 +272,9 @@ public class MusicViewModel extends AndroidViewModel {
     public void setCate_id(int cate_id){
         this.cate_id=cate_id;
     }
+    public void setRandom2(Boolean random2){this.random2.setValue(random2);}
+    public void setLoop22(Boolean loop2){this.loop2.setValue(loop2);}
+
 
     public int getCate_id(){
         return cate_id;
@@ -271,6 +290,9 @@ public class MusicViewModel extends AndroidViewModel {
     public Boolean getLoop(){ return loop; }
     public Boolean getRandom(){ return random; }
     public Boolean getTimer(){ return timer; }
+    public MutableLiveData<Boolean> getRandom2(){return this.random2;}
+    public MutableLiveData<Boolean> getLoop2(){return this.loop2;}
+
 
 
 

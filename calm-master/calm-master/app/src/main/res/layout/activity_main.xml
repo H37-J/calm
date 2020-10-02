@@ -35,6 +35,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/like_li"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/m_layout"
@@ -45,13 +46,15 @@
             app:layout_constraintEnd_toEndOf="parent">
 
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
+            <ImageView
                 android:id="@+id/like"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:clickable="true"
+                android:layout_gravity="center"
                 android:onClick="@{()->activity.Intent_Like()}"
                 app:backgroundTint="@color/white"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/m_h_hover" />
 
         </LinearLayout>
@@ -204,6 +207,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+
 
 
             </LinearLayout>

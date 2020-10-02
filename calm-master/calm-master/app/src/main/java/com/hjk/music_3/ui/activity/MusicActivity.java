@@ -4,16 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import java.util.Random;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 
+import com.bumptech.glide.Glide;
 import com.github.pwittchen.swipe.library.rx2.Swipe;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.hjk.music_3.R;
@@ -55,9 +58,7 @@ public class MusicActivity extends AppCompatActivity {
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
         binding.setActivity(this);
 
-        userViewModel.getCurrent_user().observe(this,u->{
-            System.out.println("로그인한 유저:"+u.getName());
-        });
+
 
         userViewModel= ViewModelProviders.of(this).get(UserViewModel.class);
         musicViewModel=ViewModelProviders.of(this).get(MusicViewModel.class);
@@ -73,12 +74,29 @@ public class MusicActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        MethodUtils.UpdateSaveTime(getApplication());
+//        MethodUtils.UpdateSaveTime(getApplication());
+        int time=Integer.parseInt(UserViewModel.getCurrent_user().getValue().getSave_time());
+        time= (MusicViewModel.getSave_time()/60)+time;
+        UserViewModel.getCurrent_user().getValue().setSave_time(Integer.toString(time));
+        UserViewModel.user_update(UserViewModel.getCurrent_user().getValue());
 
         binding.musicImage.setOnTouchListener(new OnSwipeTouchListener(MusicActivity.this) {
             public void onSwipeTop() {
-                if(MusicApplication)
-                Intent_Current_Music11();
+
+                if(MusicApplication.getInstance().getServiceInterface().getInit11()||
+                        MusicApplication.getInstance().getServiceInterface().getInit12()||
+                        MusicApplication.getInstance().getServiceInterface().getInit13()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_1()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_2()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_3()) {
+                    Intent_Current_Music11();
+                }
+                else{
+                    if(MusicApplication.getInstance().getServiceInterface().getInit3()||
+                            MusicApplication.getInstance().getServiceInterface().getInitMusic()){
+                        Intent_Current_Music3();
+                    }
+                }
             }
             public void onSwipeRight() {
                 Toast.makeText(MusicActivity.this, "음악 중지", Toast.LENGTH_SHORT).show();
@@ -98,7 +116,21 @@ public class MusicActivity extends AppCompatActivity {
         });
         binding.sc.setOnTouchListener(new OnSwipeTouchListener(MusicActivity.this) {
             public void onSwipeTop() {
-                Intent_Current_Music11();
+
+                if(MusicApplication.getInstance().getServiceInterface().getInit11()||
+                        MusicApplication.getInstance().getServiceInterface().getInit12()||
+                        MusicApplication.getInstance().getServiceInterface().getInit13()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_1()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_2()||
+                        MusicApplication.getInstance().getServiceInterface().getInit2_3()) {
+                    Intent_Current_Music11();
+                }
+                else{
+                    if(MusicApplication.getInstance().getServiceInterface().getInit3()||
+                            MusicApplication.getInstance().getServiceInterface().getInitMusic()){
+                        Intent_Current_Music3();
+                    }
+                }
             }
             public void onSwipeRight() {
                 Toast.makeText(MusicActivity.this, "음악 중지", Toast.LENGTH_SHORT).show();
@@ -119,9 +151,16 @@ public class MusicActivity extends AppCompatActivity {
 
 
         if(MusicApplication.getInstance().getServiceInterface().getHide()){
+//            ConstraintLayout.LayoutParams layoutParam=(ConstraintLayout.LayoutParams)binding.likeLi.getLayoutParams();
+//            layoutParam.bottomMargin=120;
+//            binding.likeLi.setLayoutParams(layoutParam);
             binding.mini.setVisibility(View.GONE);
         }
         else if(!MusicApplication.getInstance().getServiceInterface().getHide()){
+//            ConstraintLayout.LayoutParams layoutParam=(ConstraintLayout.LayoutParams)binding.likeLi.getLayoutParams();
+//            layoutParam.bottomMargin=160;
+//            binding.likeLi.setLayoutParams(layoutParam);
+
             binding.mini.setVisibility(View.VISIBLE);
         }
 
@@ -130,7 +169,8 @@ public class MusicActivity extends AppCompatActivity {
             @Override
             public void onChanged(Boolean aBoolean) {
                 if(aBoolean){
-                    binding.playBtn.setImageResource(R.drawable.ic_pause_48dp);
+                    Glide.with(getApplicationContext()).load(R.drawable.pulse).into(binding.playBtn);
+
                 }else{
                     binding.playBtn.setImageResource(R.drawable.ic_play_arrow_48dp);
                 }
@@ -176,11 +216,7 @@ public class MusicActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Intent_Current_like(){
-        Intent intent=new Intent(MusicActivity.this, PlayerActivityLike.class);
-        intent.putExtra("bno",musicViewModel.getPos());
-        startActivity(intent);
-    }
+
 
     public void start_pause(){
         if(MusicApplication.getInstance().getServiceInterface().isPlaying()){

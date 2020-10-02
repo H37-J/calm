@@ -34,6 +34,8 @@ import com.hjk.music_3.ui.adapter.MusicAdapter3;
 import com.hjk.music_3.ui.viewmodel.CateViewModel;
 import com.hjk.music_3.ui.viewmodel.MusicViewModel;
 import com.hjk.music_3.ui.viewmodel.UserViewModel;
+import com.hjk.music_3.utils.StringUtils.StringUtils;
+import com.hjk.music_3.utils.TimeUtils;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -51,6 +53,8 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
     MusicAdapter3 musicAdapter3;
 
     FragmentMainBinding binding;
+    int current_time;
+    String user_name;
     public static MainFragment newInstance(){return new MainFragment();}
 
     @Nullable
@@ -63,6 +67,28 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
         userViewModel=ViewModelProviders.of(this).get(UserViewModel.class);
         cateViewModel=ViewModelProviders.of(this).get(CateViewModel.class);
 
+        current_time= Integer.parseInt(TimeUtils.getHour());
+        user_name=UserViewModel.getCurrent_user().getValue().getName();
+
+        if(6<=current_time && current_time<12) {
+            binding.daily.setText(user_name+", 님 좋은 아침입니다!");
+        }
+
+        else if(12<=current_time && current_time<=17) {
+            binding.daily.setText(user_name+", 님 점심시간이에요!");
+        }
+
+
+        else if(18<=current_time && current_time<=24) {
+            binding.daily.setText(user_name+", 님 좋은 저녁이에요");
+        }
+
+
+        else {
+            binding.daily.setText(user_name+", 님 하루 마무리 하셨나요?");
+        }
+
+
         View root=binding.getRoot();
         return root;
     }
@@ -74,7 +100,25 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
         userViewModel.getCurrent_user().observe(this,new Observer<User>(){
             @Override
             public void onChanged(User u) {
-                binding.textView1.setText(u.getName());
+                user_name=u  .getName();
+
+                if(6<=current_time && current_time<12) {
+                    binding.daily.setText(user_name+", 님 좋은 아침입니다!");
+                }
+
+                else if(12<=current_time && current_time<=17) {
+                    binding.daily.setText(user_name+", 님 점심시간이에요!");
+                }
+
+
+                else if(18<=current_time && current_time<=24) {
+                    binding.daily.setText(user_name+", 님 좋은 저녁이에요");
+                }
+
+
+                else {
+                    binding.daily.setText(user_name+", 님 하루 마무리 하셨나요?");
+                }
             }
         });
         //로그인한 유저 닉네임 표시
@@ -83,7 +127,7 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
 
     public void getData(){
         musicViewModel= ViewModelProviders.of(this).get(MusicViewModel.class);
-        musicViewModel.getMusic_11().observe(this,musicViewModel->{
+        musicViewModel.getMusic().observe(this,musicViewModel->{
             if(musicViewModel!=null){
                 setMusic(musicViewModel);
                 MusicApplication.getInstance().getServiceInterface().setViewModel( ViewModelProviders.of(this).get(MusicViewModel.class));
@@ -102,16 +146,27 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
     }
 
     public void setMusic(List<Music> m){
+        String[] arr= StringUtils.str_split(userViewModel.getCurrent_user().getValue().getSave_music());
+
         RecyclerView recycler_music_lsit=getActivity().findViewById(R.id.music_list);
-        if(m.size()>=7){
-            ArrayList<Music> m3=new ArrayList<Music>();
-            m3.add(m.get(0));
-            m3.add(m.get(1));
-            m3.add(m.get(2));
-            m3.add(m.get(3));
-            m3.add(m.get(4));
-            m3.add(m.get(5));
-            m3.add(m.get(6));
+        if(m.size()>=7) {
+            ArrayList<Music> m3 = new ArrayList<Music>();
+            for (int i = arr.length-1; i >=0; i--) {
+                for(int j=0; j<m.size(); j++){
+                    if(Integer.parseInt(arr[i])==Integer.parseInt(m.get(j).getBno()))
+                    {
+                        m3.add(m.get(j));
+                        break;
+                    }
+                    if(m3.size()==7){
+                        break;
+                    }
+                }
+            }
+
+            musicViewModel.setMusic_recent(m3);
+
+
             musicAdapter=new MusicAdapter(m3,this);
             recycler_music_lsit.setAdapter(musicAdapter);
             recycler_music_lsit.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
@@ -168,11 +223,16 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
     public void onItemClicked(int pos, ImageView imageView) throws Exception{
         final int pos_=pos;
         MusicApplication.getInstance().getServiceInterface().setInit11();
+        User user=new User();
+        user=userViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(userViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        userViewModel.user_update(user);
 
 
         musicViewModel.setPos(pos_);
         musicViewModel.set_current_music_all(pos_);
-        musicViewModel.set_current_music_11(pos_);
+        musicViewModel.setCurrent_music_recent(pos_);
         MusicApplication.getInstance().getServiceInterface().init11();
         Intent intent=new Intent(getActivity(), PlayerActivity.class);
         startActivity(intent);
@@ -181,6 +241,11 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
     @Override
     public void onItemClicked2(int pos, ImageView imageView) throws Exception{
         final int pos_=pos;
+        User user=new User();
+        user=userViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(userViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        userViewModel.user_update(user);
 
         MusicApplication.getInstance().getServiceInterface().setInit12();
         musicViewModel.setPos(pos_);
@@ -194,6 +259,12 @@ public class MainFragment extends Fragment implements MusicAdapter.OnItemClickLi
     @Override
     public void onItemClicked3(int pos, ImageView imageView) throws Exception{
         final int pos_=pos;
+        User user=new User();
+        user=userViewModel.getCurrent_user().getValue();
+        int history=Integer.parseInt(userViewModel.getCurrent_user().getValue().getSave_history())+1;
+        user.setSave_history(Integer.toString(history));
+        userViewModel.user_update(user);
+
 
         MusicApplication.getInstance().getServiceInterface().setInit13();
         musicViewModel.setPos(pos_);

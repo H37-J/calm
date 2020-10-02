@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil;
 
 import com.hjk.music_3.R;
 import com.hjk.music_3.databinding.ActivitySettingBinding;
+import com.hjk.music_3.ui.activity.login.LoginActivity;
 import com.hjk.music_3.ui.activity.login.LoginActivity_php;
 import com.hjk.music_3.utils.ToastUtils;
 
@@ -41,7 +42,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void Intent_LogOut(){
-        Intent intent=new Intent(SettingActivity.this, LoginActivity_php.class);
+        Intent intent=new Intent(SettingActivity.this, LoginActivity.class);
         startActivity(intent);
         ActivityCompat.finishAffinity(this);
     }

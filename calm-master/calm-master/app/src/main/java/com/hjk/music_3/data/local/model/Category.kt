@@ -30,5 +30,9 @@ data class Category (
 
         @ColumnInfo(name="image")
         @SerializedName("image")
-        var image: String?=null
+        var image: String?=null,
+
+        @ColumnInfo(name="description")
+        @SerializedName("description")
+        var description: String?=null
 )

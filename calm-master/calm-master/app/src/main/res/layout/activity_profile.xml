@@ -43,6 +43,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -184,7 +189,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:background="#00FFFFFF"
-        android:text="일정 및 기록"
+        android:text="세션 수동 추가"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:gravity="center_horizontal"
@@ -202,39 +207,8 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout4"
         app:layout_constraintTop_toTopOf="@+id/linearLayout4">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#00FFFFFF" />
-
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout5"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:srcCompat="@drawable/pngwing_com__13_2" />
-
-    <TextView
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:background="#00FFFFFF"
-        android:text="친구추천 쿠폰 발송"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/day"
@@ -266,22 +240,6 @@
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:background="@drawable/buttonstyle_2"
-        android:text="공유하기"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
