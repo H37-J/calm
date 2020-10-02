@@ -67,7 +67,7 @@ Screenshots
 
 다운로드    
 --------------------
-<a href="http://these9909.cafe24.com/apkdownlod1">     
+<a href="http://these9909.cafe24.com/apkdownlod2">     
 apk 다운로드 </a>
 
 사용기술 
