@@ -46,7 +46,6 @@ public class SplashActivity extends AppCompatActivity {
         musicViewModel.init();
 
 
-        출처: https://yoo-hyeok.tistory.com/48 [유혁의 엉터리 개발]
         cateViewModel.getDay().observe(this,c->{
             int num=random.nextInt(c.size());
              cateViewModel.setCurrentDay(num);
