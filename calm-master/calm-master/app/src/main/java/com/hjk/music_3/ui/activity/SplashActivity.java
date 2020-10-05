@@ -65,7 +65,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 userViewModel.getUserList().observe(this, u2 -> {
                     for (int i = 0; i < u2.size(); i++) {
-                        if (u2.get(i).getId().equals(u.getId()))
+                        if (u2.get(i).getId().equals(u.getId())) {
                             if (Integer.parseInt(u2.get(i).getLast_login()) == Integer.parseInt(TimeUtils.getDayCom()) - 1) {
                                 day = Integer.parseInt(u2.get(i).getSave_day()) + 1;
                             } else if (Integer.parseInt(u2.get(i).getLast_login()) == Integer.parseInt(TimeUtils.getDayCom())) {
@@ -73,25 +73,27 @@ public class SplashActivity extends AppCompatActivity {
                             } else {
                                 day = 1;
                             }
-                        userViewModel.setCurrent_user(u2.get(i));
-                        User user = new User();
-                        user = u2.get(i);
-                        user.setSave_day(Integer.toString(day));
 
-                        user.setSubscription_status(u2.get(i).getSubscription_status());
-                        user.setSubscription_start_date(u2.get(i).getSubscription_start_date());
-                        user.setSave_music(u2.get(i).getSave_music());
+                            userViewModel.setCurrent_user(u2.get(i));
+                            User user = new User();
+                            user = u2.get(i);
+                            user.setSave_day(Integer.toString(day));
 
-                        user.setLast_login(TimeUtils.getDayCom());
-                        userViewModel.user_update(user);
+                            user.setSubscription_status(u2.get(i).getSubscription_status());
+                            user.setSubscription_start_date(u2.get(i).getSubscription_start_date());
+                            user.setSave_music(u2.get(i).getSave_music());
 
-                        save_back = Integer.parseInt(user.getSave_back());
+                            user.setLast_login(TimeUtils.getDayCom());
+                            userViewModel.user_update(user);
 
-                        UserViewModel.insert_user(user);
+                            save_back = Integer.parseInt(user.getSave_back());
 
-                        backViewModel.getBack().observe(this, b -> {
-                            backViewModel.set_current_back(b.get(save_back));
-                        });
+                            UserViewModel.insert_user(user);
+
+                            backViewModel.getBack().observe(this, b -> {
+                                backViewModel.set_current_back(b.get(save_back));
+                            });
+                        }
 
                     }
                 });
